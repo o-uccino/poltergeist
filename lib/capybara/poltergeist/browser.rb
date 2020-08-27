@@ -480,7 +480,7 @@ module Capybara::Poltergeist
 
     def key_descriptor(key)
       key = KEY_ALIASES.fetch(key, key)
-      res = if (match = key.to_s.match(/numpad(.)/))
+      if (match = key.to_s.match(/numpad(.)/))
         { keys: match[1], modifier: 'keypad' }
       else
         key = key.to_s.split('_').map(&:capitalize).join if key !~ /^[A-Z]/
