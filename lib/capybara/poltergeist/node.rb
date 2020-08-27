@@ -86,7 +86,7 @@ module Capybara::Poltergeist
       command :value
     end
 
-    def set(value, options = {})
+    def set(value, **options)
       warn "Options passed to Node#set but Poltergeist doesn't currently support any - ignoring" unless options.empty?
 
       if tag_name == 'input'
@@ -142,7 +142,7 @@ module Capybara::Poltergeist
       command :disabled?
     end
 
-    def click(keys = [], offset = {})
+    def click(keys = [], **offset)
       command :click, keys, offset
     end
 
